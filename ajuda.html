@@ -13,12 +13,28 @@
             background-color: #f4f4f4;
         }
 
-        header,
-        footer {
-            background-color: #007B5E;
-            color: white;
-            text-align: center;
+        header {
+            background-color: #ffffff;
             padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid #007B5E;
+        }
+
+        header img {
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        header div h1 {
+            margin: 0;
+            color: #007B5E;
+        }
+
+        header div p {
+            margin: 0;
+            color: #444;
         }
 
         nav {
@@ -62,13 +78,25 @@
             font-size: 18px;
             border-radius: 8px;
         }
+
+        footer {
+            background-color: #007B5E;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>HC Digital Fácil</h1>
-        <p>Ajuda e suporte ao paciente</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg7JVYJ6dof_f82WpRfO13dPDkEMaUaruYcg&s"
+            alt="Logo HC">
+        <div>
+            <h1>HC Digital Fácil</h1>
+            <p>Ajuda e suporte ao paciente</p>
+        </div>
     </header>
 
     <nav>
