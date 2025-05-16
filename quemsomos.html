@@ -6,19 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quem Somos - HC Digital Fácil</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             background-color: #f4f4f4;
         }
 
-        header,
-        footer {
-            background-color: #007B5E;
+        /* Novo cabeçalho com imagem */
+        .header-image {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(74, 154, 164, 0.6);
+            /* #4A9AA4 com opacidade */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-overlay h1 {
             color: white;
-            text-align: center;
-            padding: 15px;
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 1px 1px 4px #000;
         }
 
         nav {
@@ -71,14 +102,25 @@
             text-decoration: none;
             color: #007B5E;
         }
+
+        footer {
+            background-color: #007B5E;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>HC Digital Fácil</h1>
-        <p>Conheça nossa equipe</p>
-    </header>
+    <!-- Novo cabeçalho com imagem -->
+    <div class="header-image">
+        <img src="https://medicinasa.com.br/wp-content/uploads/2023/03/HCFMUSP-2b-credito-p-HCFMUSP-850x560.jpg"
+            alt="Hospital das Clínicas">
+        <div class="header-overlay">
+            <h1>Quem Somos</h1>
+        </div>
+    </div>
 
     <nav>
         <a href="index.html">Início</a>
