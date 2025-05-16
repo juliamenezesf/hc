@@ -4,117 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quem Somos - HC Digital Fácil</title>
+    <title>Checklist - HC Digital Fácil</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
 
-        header,
-        footer {
+        header {
             background-color: #007B5E;
             color: white;
+            padding: 20px;
             text-align: center;
-            padding: 15px;
         }
 
         main {
             padding: 20px;
-            max-width: 800px;
+            max-width: 600px;
             margin: auto;
         }
 
-        .integrante {
-            background: white;
-            border-radius: 8px;
+        label {
+            display: block;
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+        button {
+            margin-top: 20px;
             padding: 15px;
-            margin: 20px 0;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-        }
-
-        .integrante img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-
-        .integrante-info {
-            flex-grow: 1;
-        }
-
-        .integrante-info h3 {
-            margin: 5px 0;
-        }
-
-        .integrante-info a {
-            margin-right: 10px;
-            text-decoration: none;
-            color: #007B5E;
-        }
-
-        nav {
-            background-color: #004e3d;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
+            width: 100%;
+            font-size: 18px;
+            background-color: #28a745;
             color: white;
-            margin: 0 10px;
-            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .resultado {
+            margin-top: 30px;
+            font-size: 20px;
             font-weight: bold;
+            color: #007B5E;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>HC Digital Fácil</h1>
-        <p>Conheça nossa equipe</p>
+        <h1>Checklist de Preparação</h1>
+        <p>Veja se está tudo certo para sua consulta online</p>
     </header>
 
-    <nav>
-        <a href="index.html">Início</a>
-        <a href="como-acessar.html">Como Acessar</a>
-        <a href="checklist.html">Checklist</a>
-        <a href="ajuda.html">Ajuda</a>
-        <a href="quem-somos.html">Quem Somos</a>
-    </nav>
-
     <main>
-        <div class="integrante">
-            <img src="img/integrante1.jpg" alt="Foto integrante 1">
-            <div class="integrante-info">
-                <h3>Maria Silva</h3>
-                <p>RM: 123456 | Turma: 1TDS</p>
-                <a href="https://github.com/mariasilva" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/mariasilva" target="_blank">LinkedIn</a>
-            </div>
-        </div>
+        <form id="checklistForm">
+            <label><input type="checkbox" name="item"> Estou com o celular carregado</label>
+            <label><input type="checkbox" name="item"> Tenho acesso à internet/Wi-Fi</label>
+            <label><input type="checkbox" name="item"> Recebi o link da consulta</label>
+            <label><input type="checkbox" name="item"> Sei o horário da minha consulta</label>
+            <label><input type="checkbox" name="item"> Estou em um local tranquilo para conversar</label>
 
-        <div class="integrante">
-            <img src="img/integrante2.jpg" alt="Foto integrante 2">
-            <div class="integrante-info">
-                <h3>João Oliveira</h3>
-                <p>RM: 654321 | Turma: 1TDS</p>
-                <a href="https://github.com/joaooliveira" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/joaooliveira" target="_blank">LinkedIn</a>
-            </div>
-        </div>
+            <button type="button" onclick="verificarChecklist()">Verificar</button>
+        </form>
 
-        <!-- Adicione mais integrantes aqui -->
+        <div class="resultado" id="resultado"></div>
     </main>
 
-    <footer>
-        Projeto Suporte Digital 2025 – Hospital das Clínicas
-    </footer>
+    <script>
+        function verificarChecklist() {
+            const checkboxes = document.querySelectorAll('input[name="item"]');
+            const total = checkboxes.length;
+            let marcados = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) marcados++;
+            });
+
+            const resultado = document.getElementById("resultado");
+
+            if (marcados === total) {
+                resultado.textContent = "Tudo pronto! Você está preparado para sua consulta.";
+            } else {
+                resultado.textContent = "Você ainda precisa verificar alguns itens antes da consulta.";
+            }
+        }
+    </script>
 </body>
 
 </html>
